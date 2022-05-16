@@ -1,0 +1,20 @@
+<h1 class="main-title"> Food Order </h1>
+<div class="topnav">
+    <%= link_to "Home", menus_path %>
+    <%= link_to "Cart", carts_path %>
+    <%= link_to "Orders", orders_index_path %>
+    <%= button_to "Sign out", sign_out_path , method: :delete%>
+</div>
+
+<h1 class="main-header"> Your orders </h1>
+<div class="menu-container">
+    <% @orders.each do |o| %>
+            <div class="menu-item-container">
+                <p>Order ID : <%= o.id %></p>
+                <p>Price : <%= o.price %></p>
+                <p>Status : <%= o.status%></p>
+                <br>
+                <%= link_to "View Order items", "/order_items/#{o.id}/viewOrderItems",class: "view-button"%>
+            </div>
+    <% end %>
+</div>

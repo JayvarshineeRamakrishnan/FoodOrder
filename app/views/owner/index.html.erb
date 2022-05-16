@@ -1,0 +1,17 @@
+<h1 class="main-title"> Food Order Owner Dashboard</h1>
+<div class="topnav">
+    <%= link_to "Home", owners_path %>
+    <%= link_to "Menu Details", owner_menus_path %>
+     <%= link_to "Order Details", owner_orders_path %>
+    <%= button_to "Sign out", owner_sign_out_path , method: :delete%>
+</div>
+<h1 class="main-header">Welcome Owner <h1>   
+<% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+
+

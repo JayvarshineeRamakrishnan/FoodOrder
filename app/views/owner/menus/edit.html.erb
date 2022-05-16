@@ -1,0 +1,25 @@
+<div class="main-container">
+    <h1 class="main-title"> Edit Menu Here </h1> 
+
+
+    <%= form_with model: @menu, url: owner_menu_path, method: :patch  do|f|%>
+        <div>
+            <%= f.label :name,class:"form-label"%><br />
+            <%= f.text_field :name, autofocus: true %>
+        </div>
+
+        <div>
+            <%= f.label :price,class:"form-label" %><br />
+            <%= f.number_field :price, autofocus: true %>
+        </div>
+
+        <div >
+            <%= f.submit "Update Menu", :action =>'update',class: "button" %>
+        </div>
+        <% if flash[:notice] %>
+            <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
+    <% end%>
+
+    <%= link_to 'Back to Menu List', owner_menus_path,class: "to-button"%>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Greetings from Food Order.com, <%= @user.name %></h1>
+    <p>
+      You have placed an order at Food Order.com .<br>
+      Your Order Summary <br> 
+      <p>Order ID: <%= @order.id %><br>
+      <p>Order Date: <%= @order.date %><br>
+      <p>Order Status: <%= @order.status %><br>
+      <p>Total Price: <%= @order.price %><br>
+    </p>
+    <p>
+      To Sign in to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for placing the order and enjoy your food!!</p>
+  </body>
+</html>
+

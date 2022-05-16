@@ -1,0 +1,76 @@
+.add-button{
+    background-color: #FF7662;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.delete-button{
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border: 2px solid transparent;
+    cursor: pointer; 
+}
+.delete-button:hover{
+    opacity: 0.8;
+}
+
+.confirm-order-button{
+    background-color: #FF7662;
+    color: #fff;
+    display: block;
+    border: 3px solid transparent;
+    padding: 20px 50px;
+    margin: 0 auto;
+
+}
+
+.confirm-order-button:hover{
+    opacity: 0.8;
+}
+
+.menu-table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-table td, .order-table th{
+    border: 2px solid #ddd;
+    padding: 5px;
+}
+
+.menu-table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #FF7662;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+.menu-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.menu-table tr:hover {background-color: #ddd;}
+
+.edit-button{
+    background-color: #24A0ED;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.view-button{
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}

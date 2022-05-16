@@ -1,0 +1,102 @@
+.main-title{
+    background-color: #FF7662;
+    color: #fff;
+    padding: 20px;
+    font-size: 32px;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav button{
+    float: right;
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 14px 30px;
+    font-size: 17px;
+    color: #f2f2f2;
+}
+
+.topnav a:hover, .topnav button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.menu-title{
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+}
+.menu-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    padding: 10px;
+}
+
+.menu-item-container{
+    background-color: rgb(255, 242, 240);
+    border: 1px solid #333;
+    padding: 20px;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    align-items: center;
+}
+.menu-item-container p{
+    line-height: 1.5;
+}
+.decrement-button{
+    background-color: rgb(255, 115, 115);
+    color: #333;
+    padding: 3px 20px;
+    margin: 4px;
+    border: 1px solid transparent;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.increment-button{
+    background-color: rgb(208, 255, 163);
+    color: #333;
+    padding: 3px 20px;
+    margin: 4px;
+    border: 1px solid transparent;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.cart-button{
+    margin-top: 10px;
+    background-color: #FF7662;
+    color: #fff;
+    padding: 5px 20px;
+    border: 2px solid transparent;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.cart-button:hover{
+    opacity: 0.8;
+}
+
+.clear-float{
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}

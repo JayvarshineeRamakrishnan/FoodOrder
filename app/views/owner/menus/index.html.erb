@@ -1,0 +1,47 @@
+<h1 class="main-title"> Food Order Owner Dashboard</h1>
+<div class="topnav">
+    <%= link_to "Home", owners_path %>
+    <%= link_to "Menu Details", owner_menus_path %>
+     <%= link_to "Order Details", owner_orders_path %>
+    <%= button_to "Sign out", owner_sign_out_path , method: :delete%>
+</div>
+<div class="clear-float">
+</div>
+<br>
+<br>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+
+ <%= link_to "Add Menu" , new_owner_menu_path,class: "add-button"%>
+ <br>
+ <br>
+<table class="menu-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Edit </th>
+      <th>Delete </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.name %></td>
+        <td><%= menu.price%></td>
+        <td><%= link_to "Edit", edit_owner_menu_path(menu.id),class:"edit-button" %></td>
+        <td><%= button_to "Delete", owner_menu_path(menu.id), method: :delete,class: "delete-button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

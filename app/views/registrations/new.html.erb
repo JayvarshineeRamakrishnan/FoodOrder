@@ -1,0 +1,25 @@
+<div class="main-container">
+    <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+    <% end %>
+    <h1 class="main-header"> Sign Up </h1>
+
+    <%= form_with model: @user, url: sign_up_path do|form| %>
+        <%= form.label :name, class: "form-label"%> <br>
+        <%= form.text_field :name ,placeholder: "abc" %> <br><br>
+        <%= form.label :email, class: "form-label"%> <br>
+        <%= form.text_field :email ,placeholder: "abc@gmail.com" %> <br><br>
+        <%= form.label :password, class: "form-label" %> <br>
+        <%= form.password_field :password  ,placeholder: "password" %> <br><br>
+        <%= form.label :password_confirmation, class: "form-label" %> <br>
+        <%= form.password_field :password_confirmation, placeholder: "password"%> <br><br>
+        <br>
+        <%= form.submit "Sign Up", class: "button"%>
+        <p class="main-text"> Already a User</p>
+        <%= link_to "Sign In", sign_in_path, class: "to-button"%>
+    <% end %>
+</div>

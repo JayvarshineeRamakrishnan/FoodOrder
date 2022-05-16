@@ -1,0 +1,48 @@
+<h1 class="main-title"> Food Order </h1>
+<div class="topnav">
+    <%= link_to "Home", menus_path %>
+    <%= link_to "Cart", carts_path %>
+     <%= link_to "Orders", orders_index_path %>
+    <%= button_to "Sign out", sign_out_path , method: :delete%>
+</div>
+<h1 class="main-header"> Shopping Cart </h1>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+
+<%= link_to "Add More Items ", menus_path, class: "add-button" %>
+<div class="menu-container">
+  <% order.order_items.order(:id).each do |order_item|%>
+    <div class="menu-item-container">
+      <p> Name:<%= order_item.menu_name %> </p>
+      <p> Price:<i aria-hidden="true"></i> <%= order_item.menu_price %> </p>
+      <div>
+        <%= form_with(url: "/order_items/#{order_item.id}/decrementInCart", method: "put") do%>
+          <%= submit_tag("-",class: "decrement-button")%>
+        <% end %>
+        <p><%= order_item.quantity%></p>
+        <%= form_with(url: "/order_items/#{order_item.id}/incrementInCart", method: "put") do%>
+          <%= submit_tag("+",class: "increment-button")%>
+        <% end %>
+      </div>
+      <p> Total: <i aria-hidden="true"></i> <%= order_item.total %> </p>
+      <%= form_with(url: "/order_items/#{order_item.id}", method: "delete") do %>
+        <%= submit_tag("Delete Menu Item",class: "delete-button") %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<p class="main-header">Total Price: <i  aria-hidden="true"></i> <%= order.price %> </p>
+<%= form_with(url: "/orders/confirm", method: "post") do %>
+  <p> <i aria-hidden="true"></i> <%= button_tag("Confirm Order", type: "submit", class: "confirm-order-button", data: {disable_with: "Confirming.."} ) %> </p>
+<% end %>
+
+<% flash.each do|type,msg| %>
+      <div>
+        <% msg %>
+      </div>
+<%end%>

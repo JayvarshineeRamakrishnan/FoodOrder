@@ -1,0 +1,24 @@
+
+<div class="main-container">
+    <h1 class="main-title"> Add new menu </h1>
+
+
+    <%= form_with model: @menu, url: owner_menus_path, method: :post do |f| %>
+        <div>
+            <%= f.label :name ,class: "form-label"%><br />
+            <%= f.text_field :name, autofocus: true %>
+        </div>
+
+        <div>
+            <%= f.label :price ,class:"form-label"%><br />
+            <%= f.number_field :price, autofocus: true %>
+        </div>
+
+        <div >
+            <%= f.submit "ADD", class:"button" %>
+        </div>
+    <% end%>
+
+
+    <%= link_to 'Back to Menu List', owner_menus_path, class: "to-button"%>
+</div>

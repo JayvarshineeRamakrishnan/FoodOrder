@@ -1,0 +1,17 @@
+<h1 class="main-title"> Food Order </h1>
+<div class="topnav">
+    <%= link_to "Home", menus_path %>
+    <%= link_to "Cart", carts_path %>
+    <%= link_to "Orders", orders_index_path %>
+    <%= button_to "Sign out", sign_out_path , method: :delete%>
+</div>
+<h1 class="main-header"> Your orders details </h1>
+<div class="menu-container">
+    <% @order_items.each do |oi| %>
+            <div class="menu-item-container">
+                <p>Menu Name : <%= oi.menu_name %></p>
+                <p>Menu Price : <%= oi.menu_price %></p>
+                <p>Quantity : <%= oi.quantity%></p>
+            </div>
+    <% end %>
+</div>
